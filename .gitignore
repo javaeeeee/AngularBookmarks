@@ -50,6 +50,7 @@ jspm_packages
 
 ### Typescript ###
 *.js
+!systemjs.config.js
 *.map
 
 ### Typings ###

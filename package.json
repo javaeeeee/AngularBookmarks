@@ -15,7 +15,8 @@
     "copy:src": "copyfiles -u 1 src/**/*.js src/**/*.css src/**/*.html dist",
     "start": "rimraf dist && npm run copy:src && tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "typings": "typings"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.5",
@@ -26,6 +27,7 @@
     "@angular/platform-browser": "2.0.0-rc.5",
     "@angular/platform-browser-dynamic": "2.0.0-rc.5",
     "@angular/router": "3.0.0-rc.1",
+    "angular2-in-memory-web-api": "0.0.15",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.0",
     "jquery": "^2.2.4",
