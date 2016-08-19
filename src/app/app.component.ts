@@ -1,31 +1,47 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import {Bookmark} from './entities/bookmark';
+import {BookmarkService} from './services/bookmark.service';
 
 /**
- * A class to store Bookamrks.
+ * Main app class.
+ * @author Dmitry Noranovich
  */
-export class Bookmark {
-    /**
-     * Bookmark id.
-     */
-    public id: number;
-    /**
-     * Bookmark URL.
-     */
-    public url: string;
-    /**
-     * Bookmark description.
-     */
-    public description: string;
-}
-
 @Component({
     selector: 'my-app',
-    templateUrl: './app/app.component.html'
+    templateUrl: './app/app.component.html',
+    providers: [BookmarkService]
 })
-export class AppComponent {
-    bookmark: Bookmark = {
-        id: 1,
-        url: "http://github.com",
-        description: "A lot of great projects."
-    };
+export class AppComponent implements OnInit {
+    /**
+     * List of bookmarks.
+     */
+    bookmarks: Bookmark[];
+    /**
+     * Variable used to store a selected bookmark in the list.
+     */
+    selectedBookmark: Bookmark;
+    /**
+     * Constructor.
+     * @argument bookmarkService external service used to obtain bookmarks.
+     */
+    constructor(private bookmarkService: BookmarkService) {
+
+    }
+    /**
+     * The implementation of the method from OnInit interface.
+     */
+    ngOnInit(): void {
+        this.getBookmarks();
+    }
+    getBookmarks(): void {
+        this.bookmarkService.getBookmarks().then(bookmarks => this.bookmarks = bookmarks);
+    }
+    /**
+     * Method processing select event of the bookmark list.
+     * @argument bm selected bookmark.
+     */
+    onSelect(bm: Bookmark): void {
+        this.selectedBookmark = bm;
+    }
 }

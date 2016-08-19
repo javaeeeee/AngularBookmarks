@@ -1,0 +1,7 @@
+<fieldset *ngIf="bookmark">
+    <legend>Bookmark {{bookmark.id}} details:</legend>
+    <label for="url">URL</label>
+    <input [(ngModel)]="bookmark.url" placeholder="URL" id="url">
+    <label for="description">Description</label>
+    <textarea rows="8" cols="40" [(ngModel)]="bookmark.description"></textarea>
+</fieldset>

@@ -1,8 +1,7 @@
 <h1>My First Getting Started Angular 2 App</h1>
-<fieldset>
-    <legend>Bookmark {{bookmark.id}} details:</legend>
-    <label for="url">URL</label>
-    <input [(ngModel)]="bookmark.url" placeholder="URL" id="url">
-    <label for="description">Description</label>
-    <textarea rows="8" cols="40" [(ngModel)]="bookmark.description"></textarea>
-</fieldset>
+
+<h2>Bookmarks</h2>
+<ul>
+    <li *ngFor="let bm of bookmarks" (click)="onSelect(bm)" [class.selected]="bm===selectedBookmark">{{bm.url}}</li>
+</ul>
+<bookmark-detail [bookmark]="selectedBookmark"></bookmark-detail>
