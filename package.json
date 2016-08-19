@@ -1,7 +1,16 @@
 {
   "name": "angularbookmarks",
   "version": "0.1.0",
-  "description": "My Angular2-TypeScript App",
+  "description": "A app project using Angular2 and TypeScript to manipulate bookmarks using REST API.",
+  "author": {
+    "name": "Dmitry Noranovich",
+    "email": "javaeeeee (at) gmail (dot) com",
+    "url": "javaeeeee.blogspot.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
   "keywords": [
     "angular2",
     "systemjs",
