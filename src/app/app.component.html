@@ -1,7 +1,5 @@
-<h1>My First Getting Started Angular 2 App</h1>
-
-<h2>Bookmarks</h2>
-<ul>
-    <li *ngFor="let bm of bookmarks" (click)="onSelect(bm)" [class.selected]="bm===selectedBookmark">{{bm.url}}</li>
-</ul>
-<bookmark-detail [bookmark]="selectedBookmark"></bookmark-detail>
+<h1>{{title}}</h1>
+<nav>
+    <a routerLink="/bookmarks">Bookmarks</a>
+</nav>
+<router-outlet></router-outlet>
