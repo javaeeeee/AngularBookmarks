@@ -1,5 +1,6 @@
 /**
  * A class to store Bookamrks.
+ * @author Dmitry Noranovich
  */
 export class Bookmark {
     /**

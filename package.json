@@ -1,7 +1,7 @@
 {
   "name": "angularbookmarks",
   "version": "0.1.0",
-  "description": "A app project using Angular2 and TypeScript to manipulate bookmarks using REST API.",
+  "description": "An app using Angular2 and TypeScript to manipulate bookmarks using REST API as a backend.",
   "author": {
     "name": "Dmitry Noranovich",
     "email": "javaeeeee (at) gmail (dot) com",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/javaeeeee/AngularBookmarks.git"
   },
   "keywords": [
     "angular2",
