@@ -1,5 +1,8 @@
 import {Bookmark} from '../entities/bookmark';
 
+/**
+ * A class to store mock bookmarks.
+ */
 export const BOOKMARKS: Bookmark[] = [
     {
         id: 1,

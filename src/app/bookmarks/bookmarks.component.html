@@ -1,5 +1,4 @@
 <h2>Bookmarks</h2>
 <ul>
-    <li *ngFor="let bm of bookmarks" (click)="onSelect(bm)" [class.selected]="bm===selectedBookmark">{{bm.url}}</li>
+    <li *ngFor="let bm of bookmarks" (click)="gotoDetail(bm)" [class.selected]="bm===selectedBookmark">{{bm.url}}</li>
 </ul>
-<bookmark-detail [bookmark]="selectedBookmark"></bookmark-detail>

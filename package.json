@@ -22,7 +22,7 @@
     "test": "karma start",
     "lite": "lite-server",
     "copy:src": "copyfiles -u 1 src/**/*.js src/**/*.css src/**/*.html dist",
-    "start": "rimraf dist && npm run copy:src && tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "build": "rimraf dist && npm run copy:src && tsc && concurrently \"npm run tsc:w\"",
     "tsc": "tsc",
     "tsc:w": "tsc -w",

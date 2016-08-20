@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {Bookmark} from '../entities/Bookmark';
 import {BookmarkService} from '../services/bookmark.service';
@@ -25,7 +26,8 @@ export class BookmarksComponent implements OnInit {
      * Constructor.
      * @argument bookmarkService external service used to obtain bookmarks.
      */
-    constructor(private bookmarkService: BookmarkService) { }
+    constructor(private bookmarkService: BookmarkService,
+        private router: Router) { }
     /**
      * The implementation of the method from OnInit interface.
      */
@@ -39,10 +41,10 @@ export class BookmarksComponent implements OnInit {
         this.bookmarkService.getBookmarks().then(bookmarks => this.bookmarks = bookmarks);
     }
     /**
-     * Method processing select event of the bookmark list.
-     * @argument bm selected bookmark.
+     * A method used to redirect to bookmark detail page.
      */
-    onSelect(bm: Bookmark): void {
-        this.selectedBookmark = bm;
+    gotoDetail(bm: Bookmark): void {
+        let link = ['/detail', bm.id];
+        this.router.navigate(link);
     }
 }
