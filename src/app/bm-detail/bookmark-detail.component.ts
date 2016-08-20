@@ -13,15 +13,20 @@ import {BookmarkService} from '../services/bookmark.service';
     templateUrl: './app/bm-detail/bookmark-detail.component.html'
 })
 export class BookmarkDetailComponent implements OnInit {
+
+    /** 
+     * A bookmark to display.
+     */
+    bookmark: Bookmark;
+    /**
+     * Field shows if one can edit a bookmark
+     */
+    isReadonly: boolean = false;
     /**
      * A constructor.
      * 
      */
     constructor(private bookmarkService: BookmarkService, private route: ActivatedRoute) { }
-    /** 
-     * A bookmark to display.
-     */
-    bookmark: Bookmark;
     /**
      * The implementation of the method from OnInit interface.
      */

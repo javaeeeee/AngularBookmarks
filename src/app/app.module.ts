@@ -13,6 +13,7 @@ import {BookmarkDetailComponent} from './bm-detail/bookmark-detail.component';
 import {BookmarksComponent} from './bookmarks/bookmarks.component';
 import {AboutComponent} from './about/about.component';
 import {BookmarkService} from './services/bookmark.service';
+import {BookmarkAddComponent} from './bm-add/bookmark-add.component';
 import {routing} from './app.routing';
 
 /**
@@ -21,7 +22,7 @@ import {routing} from './app.routing';
  */
 @NgModule({
     imports: [BrowserModule, FormsModule, routing, HttpModule],
-    declarations: [AppComponent, BookmarkDetailComponent, BookmarksComponent, AboutComponent],
+    declarations: [AppComponent, BookmarkDetailComponent, BookmarksComponent, AboutComponent, BookmarkAddComponent],
     providers: [BookmarkService,
         { provide: XHRBackend, useClass: InMemoryBackendService },
         { provide: SEED_DATA, useClass: InMemoryDataService }

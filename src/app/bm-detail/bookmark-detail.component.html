@@ -1,14 +1,15 @@
 <form>
+    <!-- Add *name* attribute if used insede a form  -->
     <fieldset *ngIf="bookmark">
         <legend>Bookmark {{bookmark.id}} details:</legend>
         <div class="form-group">
             <label for="url">URL</label>
-            <input [(ngModel)]="bookmark.url" placeholder="URL" id="url">
+            <input [(ngModel)]="bookmark.url" placeholder="URL" id="url" name="url" [readonly]="isReadonly" >
         </div>
         <div>
             <label for="description">Description</label>
-            <textarea rows="8" cols="40" [(ngModel)]="bookmark.description"></textarea>
+            <textarea rows="8" cols="40" [(ngModel)]="bookmark.description" id="description" name="description"></textarea>
         </div>
     </fieldset>
-    <button (click)="goBack()">Go Back</button>
+    <button (click)="goBack()" class="btn btn-default">Go Back</button>
 </form>
