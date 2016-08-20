@@ -1,8 +1,14 @@
-<fieldset *ngIf="bookmark">
-    <legend>Bookmark {{bookmark.id}} details:</legend>
-    <label for="url">URL</label>
-    <input [(ngModel)]="bookmark.url" placeholder="URL" id="url">
-    <label for="description">Description</label>
-    <textarea rows="8" cols="40" [(ngModel)]="bookmark.description"></textarea>
-</fieldset>
-<button (click)="goBack()">Go Back</button>
+<form>
+    <fieldset *ngIf="bookmark">
+        <legend>Bookmark {{bookmark.id}} details:</legend>
+        <div class="form-group">
+            <label for="url">URL</label>
+            <input [(ngModel)]="bookmark.url" placeholder="URL" id="url">
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <textarea rows="8" cols="40" [(ngModel)]="bookmark.description"></textarea>
+        </div>
+    </fieldset>
+    <button (click)="goBack()">Go Back</button>
+</form>

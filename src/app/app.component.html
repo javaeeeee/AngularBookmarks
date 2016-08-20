@@ -1,6 +1,8 @@
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/bookmarks">Bookmarks</a>
-    <a routerLink="/about">About</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="cotainter">
+    <h1>{{title}}</h1>
+    <nav>
+        <a routerLink="/bookmarks" routerLinkActive="active">Bookmarks</a>
+        <a routerLink="/about" routerLinkActive="active">About</a>
+    </nav>
+    <router-outlet></router-outlet>
+</div>
