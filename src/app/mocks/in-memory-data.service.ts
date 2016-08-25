@@ -1,5 +1,7 @@
-
-
+/**
+ * A class used for mockin a backend.
+ * @author Dmitry Noranovich
+ */
 export class InMemoryDataService {
     createDb() {
         let bookmarks = [
