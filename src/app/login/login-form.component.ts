@@ -11,6 +11,8 @@ import { UserService } from '../services/user-service';
 export class LoginFormComponent implements OnInit {
     submitted = false;
     model: User;
+    username: string;
+    password: string;
     constructor(private userService: UserService,
         private router: Router) { }
     ngOnInit() {
@@ -18,12 +20,13 @@ export class LoginFormComponent implements OnInit {
     }
     onSubmit() {
         this.submitted = true;
-        /*
+        console.log('Submit form');
         this.userService
-            .login(this.model.username, this.model.password)
-            .then((user: User) => this.router.navigate(['']))
-            .catch(err => this.router.navigate['login']);
-            */
+            .login(this.username, this.password)
+            .then((user: User) => {
+                this.model = user; console.log('Redirecting...'); this.router.navigate(['']);
+            })
+            .catch(err => console.log(err));
     }
     get diagnostic() {
         return JSON.stringify(this.model);

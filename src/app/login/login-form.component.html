@@ -1,1 +1,16 @@
-<h1>Login</h1>
+<div class="container">
+    <h1>Login</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="login">Login</label>
+            <input type="text" id="login" class="form-control" [(ngModel)]="username" name="login">
+        </div>
+        <div class="form-group">
+            <label for="pass">Password</label>
+            <input type="password" id="pass" class="form-control" [(ngModel)]="password" name="pass">
+        </div>
+        <h4>{{diagnostic}}</h4>
+        <button type="submit" class="btn btn-default">Login</button>
+    </form>
+</div>
+<!--/.container-->
