@@ -1,4 +1,4 @@
-<div class="cotainter">
+<div class="cotainter" *ngIf="isAuthenticated">
 
     <div class="navbar">
         <a class="navbar-brand" href="#">{{title}}</a>
@@ -15,5 +15,5 @@
         </ul>
     </div>
 
-    <router-outlet></router-outlet>
-</div>
+</div><!--/.container-->
+<router-outlet></router-outlet>

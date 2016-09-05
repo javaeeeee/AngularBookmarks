@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import { UserService } from './services/user-service';
 
 /**
  * Main app class.
@@ -8,6 +9,11 @@ import {Component} from '@angular/core';
     selector: 'my-app',
     templateUrl: './app/app.component.html'
 })
-export class AppComponent {
-    title: string = "Bookmarks";
+export class AppComponent implements OnInit {
+    title: string = 'Bookmarks';
+    isAuthenticated: boolean;
+    constructor(private userService: UserService) { }
+    ngOnInit() {
+        this.userService.isLoggedIn();
+    }
 }

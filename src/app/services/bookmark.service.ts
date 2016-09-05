@@ -4,7 +4,7 @@ import {Headers, Http, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import {Bookmark} from '../entities/bookmark';
-import {BOOKMARKS} from '../mocks/mock-bookmarks';
+import { BOOKMARKS } from '../mocks/mock-bookmarks';
 
 /**
 * Headers for POST and PUT HTTP methods.
@@ -30,10 +30,13 @@ export class BookmarkService {
      * Method used to ontain the list of bookmarks.
      */
     getBookmarks(): Promise<Bookmark[]> {
+        return Promise.resolve(BOOKMARKS);
+        /*
         return this.http.get(this.bookmarksURL)
             .toPromise()
             .then((response: Response) => response.json().data as Bookmark[])
             .catch(this.handleError);
+            */
     }
     /**
      * A method used to add bookmarks.
@@ -62,7 +65,8 @@ export class BookmarkService {
             .catch(this.handleError);
     }
     /**
-     * A method which relies on addBookmark and editBookmark methods and provides a single point of access for save operations
+     * A method which relies on addBookmark and editBookmark methods 
+     * and provides a single point of access for save operations.
      */
     save(bm: Bookmark): Promise<Bookmark> {
         if (bm.id) {
