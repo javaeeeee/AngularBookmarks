@@ -35,4 +35,10 @@ export class AppComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
+    /**
+     * Method is used to logout.
+     */
+    logout() {
+        this.userService.logout();
+    }
 }

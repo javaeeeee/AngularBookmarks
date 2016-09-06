@@ -59,7 +59,8 @@ export class UserService implements CanActivate {
     * A method used to log out.
     */
   logout(): void {
-    this.loggedIn = false;
+    this.isLoggedIn = false;
+    this.router.navigate(['/login']);
   }
 
   /**
