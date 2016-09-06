@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import {User} from '../entities/user';
 import { UserService } from '../services/user-service';
 
+/**
+ * A controller that serves login form.
+ * @author Dmitry Noranovich
+ */
 @Component({
     selector: 'login-form',
     templateUrl: 'app/login/login-form.component.html'
@@ -30,5 +34,11 @@ export class LoginFormComponent implements OnInit {
     }
     get diagnostic() {
         return JSON.stringify(this.model);
+    }
+    /**
+     * A method that redirects to the registration form.
+     */
+    register(): void {
+        this.router.navigate(['/register']);
     }
 }

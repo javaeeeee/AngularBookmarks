@@ -36,7 +36,8 @@ export class UserService implements CanActivate {
    * A method used for authentication.
    * @return user profile data.
    */
-  login(username: string, password: string): Promise<any> {
+  // Union Type
+  login(username: string, password: string): Promise<User | void> {
     if (username === 'javaeeeee' && password === '1') {
       this.loggedIn = true;
       return Promise.resolve(USER);

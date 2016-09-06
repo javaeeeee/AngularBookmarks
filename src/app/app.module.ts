@@ -16,6 +16,7 @@ import {BookmarkService} from './services/bookmark.service';
 import { UserService } from './services/user-service';
 import {BookmarkAddComponent} from './bm-add/bookmark-add.component';
 import {routing} from './app.routing';
+import { RegisterFormComponent } from './register/register-form.component';
 
 /**
  * App modules class.
@@ -31,7 +32,8 @@ import {routing} from './app.routing';
         BookmarksComponent,
         AboutComponent,
         BookmarkAddComponent,
-        LoginFormComponent],
+        LoginFormComponent,
+        RegisterFormComponent],
     providers: [BookmarkService, UserService],
     bootstrap: [AppComponent]
 })

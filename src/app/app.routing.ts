@@ -6,6 +6,7 @@ import {BookmarkDetailComponent} from './bm-detail/bookmark-detail.component';
 import {BookmarkAddComponent} from './bm-add/bookmark-add.component';
 import { LoginFormComponent } from './login/login-form.component';
 import { UserService } from './services/user-service';
+import {RegisterFormComponent} from './register/register-form.component';
 
 /**
  * Routes.
@@ -39,6 +40,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginFormComponent
+    },
+    {
+        path: 'register',
+        component: RegisterFormComponent
     }
 ];
 

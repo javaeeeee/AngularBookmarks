@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Register</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="login">User Name</label>
+            <input type="text" id="login" name="login" class="form-control" [(ngModel)]="username">
+        </div>
+        <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" class="form-control" [(ngModel)]="fullName">
+        </div>
+        <div class="form-group">
+            <label for="email">e-mail</label>
+            <input type="email" id="email" name="email" class="form-control" [(ngModel)]="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password">
+        </div>
+        <div class="form-group">
+            <label for="password2">Repeat Password</label>
+            <input type="password" id="password2" name="password2" class="form-control" [(ngModel)]="password2">
+        </div>
+        <button type="submit" class="btn btn-default">Register</button>
+    </form>
+</div>
+<!--/.container-->
