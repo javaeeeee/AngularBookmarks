@@ -15,8 +15,8 @@ import { UserService } from '../services/user-service';
 export class LoginFormComponent implements OnInit {
     submitted = false;
     model: User;
-    username: string;
-    password: string;
+    username: string = 'javaeeeee';
+    password: string = '1';
     constructor(private userService: UserService,
         private router: Router) { }
     ngOnInit() {
@@ -39,6 +39,7 @@ export class LoginFormComponent implements OnInit {
      * A method that redirects to the registration form.
      */
     register(): void {
+        console.log('Navigating to the registration form');
         this.router.navigate(['/register']);
     }
 }

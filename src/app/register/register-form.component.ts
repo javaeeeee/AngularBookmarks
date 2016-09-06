@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { UserService } from '../services/user-service';
+
 /**
  * A component to serve the registration form.
  * @author Dmitry Noranovich
@@ -36,10 +38,12 @@ export class RegisterFormComponent {
     /**
      * The constructor with injection.
      */
-    constructor(private router: Router) {
+    constructor(private router: Router,
+        private userService: UserService) {
         this.router.navigate(['']);
     }
     onSubmit(): void {
-
+        this.userService.isLoggedIn = true;
+        this.router.navigate(['']);
     }
 }

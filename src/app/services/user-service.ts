@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 
 import {User} from '../entities/user';
 import {USER} from '../mocks/mock-user';
@@ -19,6 +20,14 @@ import 'rxjs/add/operator/map';
  */
 @Injectable()
 export class UserService implements CanActivate {
+  /**
+   * A variable to send messages about logIn status.
+   */
+  private authedSource = new Subject<boolean>();
+  /**
+   * Observable
+   */
+  authenticated$ = this.authedSource.asObservable();
   /**
    * A variable that showes that a user was logged in.
    */
@@ -39,10 +48,10 @@ export class UserService implements CanActivate {
   // Union Type
   login(username: string, password: string): Promise<User | void> {
     if (username === 'javaeeeee' && password === '1') {
-      this.loggedIn = true;
+      this.isLoggedIn = true;
       return Promise.resolve(USER);
     } else {
-      this.loggedIn = false;
+      this.isLoggedIn = false;
       return Promise.reject(new Error('Wrong Credentials. Please try again.'));
     }
   }
@@ -52,22 +61,27 @@ export class UserService implements CanActivate {
   logout(): void {
     this.loggedIn = false;
   }
-  /** 
-   * A method used to check whether the user is logged in. 
-   * @return login status
-   */
-  isLoggedIn(): boolean {
-    return this.loggedIn;
-  }
+
   /**
    * Implementation of the method from the CanActivate interface. 
    */
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.isLoggedIn()) {
+    if (this.isLoggedIn) {
       return true;
     }
     this.router.navigate(['/login']);
     return false;
+  }
+  set isLoggedIn(loggedIn: boolean) {
+    this.authedSource.next(loggedIn);
+    this.loggedIn = loggedIn;
+  }
+  /** 
+   * A method used to check whether the user is logged in. 
+   * @return login status
+   */
+  get isLoggedIn(): boolean {
+    return this.loggedIn;
   }
 }
 
