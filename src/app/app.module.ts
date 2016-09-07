@@ -15,7 +15,7 @@ import { LoginFormComponent } from './login/login-form.component';
 import {BookmarkService} from './services/bookmark.service';
 import { UserService } from './services/user-service';
 import {BookmarkAddComponent} from './bm-add/bookmark-add.component';
-import {routing} from './app.routing';
+import {routing, appRoutingProviders} from './app.routing';
 import { RegisterFormComponent } from './register/register-form.component';
 
 /**
@@ -27,14 +27,16 @@ import { RegisterFormComponent } from './register/register-form.component';
         BrowserModule, FormsModule, routing, HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService)
     ],
-    declarations: [AppComponent,
+    declarations: [
+        AppComponent,
         BookmarkDetailComponent,
         BookmarksComponent,
         AboutComponent,
         BookmarkAddComponent,
         LoginFormComponent,
-        RegisterFormComponent],
-    providers: [BookmarkService, UserService],
+        RegisterFormComponent
+    ],
+    providers: [BookmarkService, UserService, appRoutingProviders],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

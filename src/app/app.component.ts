@@ -12,22 +12,23 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AppComponent implements OnInit, OnDestroy {
     title: string = 'Bookmarks';
-    isAuthenticated: boolean;
+    private authenticated: boolean;
     /**
      * Subscribe to messages.
      */
     subscription: Subscription;
     constructor(private userService: UserService) {
         this.subscription = userService.authenticated$.subscribe(
-            isAuthenticated => {
-                this.isAuthenticated = isAuthenticated;
-                console.log('Received authentication message');
+            authenticated => {
+                this.authenticated = authenticated;
             }
         );
     }
+    /**
+     * Initialization method implementing the one from OnInit interface.
+     */
     ngOnInit() {
-        // this.isAuthenticated = this.userService.isLoggedIn;
-        // console.log('isAuthenticated = ' + this.isAuthenticated);
+
     }
     /**
      * Unsubscribe when destroyed. Implements OnDestroy interface.
@@ -40,5 +41,9 @@ export class AppComponent implements OnInit, OnDestroy {
      */
     logout() {
         this.userService.logout();
+    }
+
+    get isAuthenticated(): boolean {
+        return this.authenticated;
     }
 }

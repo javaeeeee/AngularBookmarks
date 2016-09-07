@@ -1,3 +1,4 @@
+import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
 import {AboutComponent} from './about/about.component';
@@ -12,6 +13,14 @@ import {RegisterFormComponent} from './register/register-form.component';
  * Routes.
  */
 const appRoutes: Routes = [
+    {
+        path: 'login',
+        component: LoginFormComponent
+    },
+    {
+        path: 'register',
+        component: RegisterFormComponent
+    },
     {
         path: 'bookmarks',
         component: BookmarksComponent,
@@ -36,15 +45,9 @@ const appRoutes: Routes = [
         path: '',
         redirectTo: '/bookmarks',
         pathMatch: 'full'
-    },
-    {
-        path: 'login',
-        component: LoginFormComponent
-    },
-    {
-        path: 'register',
-        component: RegisterFormComponent
     }
 ];
 
-export const routing = RouterModule.forRoot(appRoutes);
+export const appRoutingProviders: any[] = [];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

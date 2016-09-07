@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import {User} from '../entities/user';
 import { UserService } from '../services/user-service';
 
 /**
@@ -40,10 +41,9 @@ export class RegisterFormComponent {
      */
     constructor(private router: Router,
         private userService: UserService) {
-        this.router.navigate(['']);
     }
     onSubmit(): void {
-        this.userService.isLoggedIn = true;
-        this.router.navigate(['']);
+        var user: User = new User(null, this.username, this.password, this.fullName, this.email);
+        this.userService.register(user);
     }
 }

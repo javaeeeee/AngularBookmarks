@@ -73,6 +73,9 @@ export class UserService implements CanActivate {
     this.router.navigate(['/login']);
     return false;
   }
+  /**
+   * The setter for the loggedIn flag; sends the message about the flag's state change.'
+   */
   set isLoggedIn(loggedIn: boolean) {
     this.authedSource.next(loggedIn);
     this.loggedIn = loggedIn;
@@ -83,6 +86,13 @@ export class UserService implements CanActivate {
    */
   get isLoggedIn(): boolean {
     return this.loggedIn;
+  }
+  /**
+   * A method to register users.
+   */
+  register(user: User) {
+    this.isLoggedIn = true;
+    this.router.navigate(['']);
   }
 }
 

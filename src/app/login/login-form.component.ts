@@ -17,6 +17,9 @@ export class LoginFormComponent implements OnInit {
     model: User;
     username: string = 'javaeeeee';
     password: string = '1';
+    /**
+     * Constructor with injection.
+     */
     constructor(private userService: UserService,
         private router: Router) { }
     ngOnInit() {
@@ -24,11 +27,11 @@ export class LoginFormComponent implements OnInit {
     }
     onSubmit() {
         this.submitted = true;
-        console.log('Submit form');
         this.userService
             .login(this.username, this.password)
             .then((user: User) => {
-                this.model = user; console.log('Redirecting...'); this.router.navigate(['']);
+                this.model = user;
+                this.router.navigate(['']);
             })
             .catch(err => console.log(err));
     }
@@ -38,8 +41,10 @@ export class LoginFormComponent implements OnInit {
     /**
      * A method that redirects to the registration form.
      */
-    register(): void {
-        console.log('Navigating to the registration form');
+    onRegister(): void {
+        // console.log('Navigating to the registration form');
+        // this.router.navigate(['/register']);
+        // this.userService.isLoggedIn = true;
         this.router.navigate(['/register']);
     }
 }
