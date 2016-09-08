@@ -44,7 +44,13 @@ export class BookmarksComponent implements OnInit {
      * A method used to redirect to bookmark detail page.
      */
     gotoDetail(bm: Bookmark): void {
-        let link = ['/detail', bm.id];
+        let link = ['/view', bm.id];
         this.router.navigate(link);
+    }
+    /**
+     * A method to view a bookmark.
+     */
+    gotoEdit(bm: Bookmark): void {
+        this.router.navigate(['/edit', bm.id]);
     }
 }

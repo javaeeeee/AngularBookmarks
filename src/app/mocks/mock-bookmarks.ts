@@ -1,9 +1,9 @@
-import {Bookmark} from '../entities/bookmark';
+import {IBookmark} from '../entities/bookmark';
 
 /**
  * A class to store mock bookmarks.
  */
-export const BOOKMARKS: Bookmark[] = [
+export const BOOKMARKS: IBookmark[] = [
     {
         id: 1,
         url: 'http://github.com',

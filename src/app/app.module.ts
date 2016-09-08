@@ -14,9 +14,10 @@ import {AboutComponent} from './about/about.component';
 import { LoginFormComponent } from './login/login-form.component';
 import {BookmarkService} from './services/bookmark.service';
 import { UserService } from './services/user-service';
-import {BookmarkAddComponent} from './bm-add/bookmark-add.component';
 import {routing, appRoutingProviders} from './app.routing';
 import { RegisterFormComponent } from './register/register-form.component';
+import {BookmarkViewComponent} from './bm-view/bookmark-view.component';
+import {BookmarkEditComponent} from './bm-edit/bookmark-edit.component';
 
 /**
  * App modules class.
@@ -32,9 +33,10 @@ import { RegisterFormComponent } from './register/register-form.component';
         BookmarkDetailComponent,
         BookmarksComponent,
         AboutComponent,
-        BookmarkAddComponent,
         LoginFormComponent,
-        RegisterFormComponent
+        RegisterFormComponent,
+        BookmarkEditComponent,
+        BookmarkViewComponent
     ],
     providers: [BookmarkService, UserService, appRoutingProviders],
     bootstrap: [AppComponent]

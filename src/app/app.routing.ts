@@ -3,8 +3,8 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {AboutComponent} from './about/about.component';
 import {BookmarksComponent} from './bookmarks/bookmarks.component';
-import {BookmarkDetailComponent} from './bm-detail/bookmark-detail.component';
-import {BookmarkAddComponent} from './bm-add/bookmark-add.component';
+import {BookmarkViewComponent} from './bm-view/bookmark-view.component';
+import {BookmarkEditComponent} from './bm-edit/bookmark-edit.component';
 import { LoginFormComponent } from './login/login-form.component';
 import { UserService } from './services/user-service';
 import {RegisterFormComponent} from './register/register-form.component';
@@ -28,8 +28,8 @@ const appRoutes: Routes = [
     },
     {
         path: 'new',
-        component: BookmarkAddComponent,
-        canActivate: [UserService]
+        redirectTo: '/edit/',
+        pathMatch: 'full'
     },
     {
         path: 'about',
@@ -37,8 +37,13 @@ const appRoutes: Routes = [
         canActivate: [UserService]
     },
     {
-        path: 'detail/:id',
-        component: BookmarkDetailComponent,
+        path: 'view/:id',
+        component: BookmarkViewComponent,
+        canActivate: [UserService]
+    },
+    {
+        path: 'edit/:id',
+        component: BookmarkEditComponent,
         canActivate: [UserService]
     },
     {

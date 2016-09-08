@@ -42,9 +42,6 @@ export class LoginFormComponent implements OnInit {
      * A method that redirects to the registration form.
      */
     onRegister(): void {
-        // console.log('Navigating to the registration form');
-        // this.router.navigate(['/register']);
-        // this.userService.isLoggedIn = true;
         this.router.navigate(['/register']);
     }
 }
