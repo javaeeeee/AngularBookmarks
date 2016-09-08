@@ -29,5 +29,4 @@ export class BookmarkDetailComponent {
     goBack(): void {
         window.history.back();
     }
-
 }
