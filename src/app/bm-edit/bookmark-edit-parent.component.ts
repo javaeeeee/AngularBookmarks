@@ -15,14 +15,13 @@ export class BookmarkEditParentComponent implements OnInit {
     bookmark: Bookmark;
     /**
      * A constructor with dependency injection.
-     * 
      */
     constructor(private route: ActivatedRoute,
         private bookmarkService: BookmarkService,
         private router: Router) { }
     /**
-         * The implementation of the method from OnInit interface.
-         */
+    * The implementation of the method from OnInit interface.
+    */
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let paramId = params['id'];

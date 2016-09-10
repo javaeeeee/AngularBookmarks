@@ -15,6 +15,10 @@ import {BookmarkService} from '../services/bookmark.service';
 })
 export class BookmarksComponent implements OnInit {
     /**
+     * A variable which stores list selection state.
+     */
+    private selected = false;
+    /**
      * List of bookmarks.
      */
     bookmarks: Bookmark[];
@@ -52,5 +56,18 @@ export class BookmarksComponent implements OnInit {
      */
     gotoEdit(bm: Bookmark): void {
         this.router.navigate(['/edit', bm.id]);
+    }
+    /**
+     * A method to select a bookmark.
+     */
+    change(): void {
+
+    }
+    /**
+     * A method to select all bookmarks.
+     */
+    changeAll(): void {
+        this.selected = !this.selected;
+        this.bookmarks.forEach(bm => bm.selected = this.selected);
     }
 }

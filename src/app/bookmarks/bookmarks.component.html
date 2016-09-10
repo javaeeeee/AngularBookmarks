@@ -7,8 +7,8 @@
             <div class="col-sm-2">
                 <div class="checkbox">
                     <label>
-                <input type="checkbox">Delete
-            </label>
+                        <input type="checkbox" (change)="changeAll()" name="deleteall">Delete
+                    </label>
                 </div>
             </div>
         </div>
@@ -16,13 +16,13 @@
 
         <div class="row" *ngFor="let bm of bookmarks" [class.selected]="bm===selectedBookmark">
             <div class="col-sm-6">{{bm.url}}</div>
-            <div class="col-sm-2"><input type="button" class="btn btn-default" value="View" (click)="gotoDetail(bm)"></div>
-            <div class="col-sm-2"><input type="button" class="btn btn-default" value="Edit" (click)="gotoEdit(bm)"></div>
+            <div class="col-sm-2"><input type="button" class="btn btn-default" value="View" (click)="gotoDetail(bm)" name="view"></div>
+            <div class="col-sm-2"><input type="button" class="btn btn-default" value="Edit" (click)="gotoEdit(bm)" name="edit"></div>
             <div class="col-sm-2">
                 <div class="checkbox">
                     <label>
-                <input type="checkbox" >
-            </label>
+                        <input type="checkbox" [(ngModel)]="bm.selected" (change)="change()" name="delete">
+                    </label>
                 </div>
             </div>
         </div>
