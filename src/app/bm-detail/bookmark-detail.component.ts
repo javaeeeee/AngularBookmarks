@@ -8,7 +8,7 @@ import {Bookmark} from '../entities/bookmark';
  */
 @Component({
     selector: 'bm-detail',
-    templateUrl: './app/bm-detail/bookmark-detail.component.html'
+    templateUrl: './bookmark-detail.component.html'
 })
 export class BookmarkDetailComponent {
 

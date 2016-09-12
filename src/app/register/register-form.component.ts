@@ -10,7 +10,7 @@ import { UserService } from '../services/user-service';
  */
 @Component({
     selector: 'register-form',
-    templateUrl: 'app/register/register-form.component.html'
+    templateUrl: './register-form.component.html'
 })
 /**
  * Method performs user registration and redirects to the home page in the case of success.

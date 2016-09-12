@@ -1,6 +1,15 @@
 {
   "name": "angularbookmarks",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "license": "MIT",
+  "angular-cli": {},
+  "scripts": {
+    "start": "ng serve",
+    "lint": "tslint \"src/**/*.ts\"",
+    "test": "ng test",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
+  },
   "description": "An app using Angular2 and TypeScript to manipulate bookmarks using REST API as a backend.",
   "author": {
     "name": "Dmitry Noranovich",
@@ -16,52 +25,35 @@
     "systemjs",
     "typescript"
   ],
-  "scripts": {
-    "lint": "tslint \"src/**/*.ts\"",
-    "postinstall": "typings install",
-    "test": "tsc && concurrently \"npm run tsc:w\" \"karma start karma.conf.js\" ",
-    "lite": "lite-server",
-    "copy:src": "copyfiles -u 1 src/**/*.js src/**/*.css src/**/*.html dist",
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "build": "rimraf dist && npm run copy:src && tsc && concurrently \"npm run tsc:w\"",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "typings": "typings"
-  },
+  "private": true,
   "dependencies": {
     "@angular/common": "2.0.0-rc.6",
     "@angular/compiler": "2.0.0-rc.6",
-    "@angular/compiler-cli": "0.6.0",
     "@angular/core": "2.0.0-rc.6",
     "@angular/forms": "2.0.0-rc.6",
     "@angular/http": "2.0.0-rc.6",
     "@angular/platform-browser": "2.0.0-rc.6",
     "@angular/platform-browser-dynamic": "2.0.0-rc.6",
     "@angular/router": "3.0.0-rc.2",
-    "@angular/upgrade": "2.0.0-rc.6",
-    "angular2-in-memory-web-api": "0.0.18",
-    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
-    "jquery": "^2.2.4",
-    "reflect-metadata": "0.1.3",
     "rxjs": "5.0.0-beta.11",
-    "systemjs": "0.19.27",
+    "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.17"
   },
   "devDependencies": {
-    "codelyzer": "0.0.19",
-    "concurrently": "^2.2.0",
-    "copyfiles": "^1.0.0",
-    "jasmine-core": "2.5.1",
-    "karma": "^1.3.0",
+    "@types/jasmine": "^2.2.30",
+    "angular-cli": "1.0.0-beta.11-webpack.8",
+    "codelyzer": "~0.0.26",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "1.2.0",
     "karma-chrome-launcher": "^2.0.0",
-    "karma-htmlfile-reporter": "^0.3.4",
+    "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
-    "lite-server": "^2.2.2",
-    "rimraf": "^2.5.2",
-    "tslint": "^3.15.1",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.2"
-  },
-  "license": "MIT"
+    "karma-remap-istanbul": "^0.2.1",
+    "protractor": "4.0.5",
+    "ts-node": "1.2.1",
+    "tslint": "3.13.0",
+    "typescript": "2.0.2"
+  }
 }

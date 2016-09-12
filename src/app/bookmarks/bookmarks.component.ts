@@ -10,7 +10,7 @@ import {BookmarkService} from '../services/bookmark.service';
  */
 @Component({
     selector: 'bookmarks',
-    templateUrl: './app/bookmarks/bookmarks.component.html',
+    templateUrl: './bookmarks.component.html',
     providers: []
 })
 export class BookmarksComponent implements OnInit {
@@ -20,7 +20,7 @@ export class BookmarksComponent implements OnInit {
     private selected = false;
     /**
      * List of bookmarks.
-     */
+     +*/
     bookmarks: Bookmark[];
     /**
      * Variable used to store a selected bookmark in the list.

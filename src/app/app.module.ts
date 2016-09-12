@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 // Imports for the fake backend.
 import {InMemoryWebApiModule} from 'angular2-in-memory-web-api';
@@ -24,21 +24,26 @@ import {BookmarkEditComponent} from './bm-edit/bookmark-edit.component';
  * @author Dmitry Noranovich
  */
 @NgModule({
-    imports: [
-        BrowserModule, FormsModule, routing, HttpModule,
-        InMemoryWebApiModule.forRoot(InMemoryDataService)
-    ],
-    declarations: [
-        AppComponent,
-        BookmarkDetailComponent,
-        BookmarksComponent,
-        AboutComponent,
-        LoginFormComponent,
-        RegisterFormComponent,
-        BookmarkEditComponent,
-        BookmarkViewComponent
-    ],
-    providers: [BookmarkService, UserService, appRoutingProviders],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    BookmarkDetailComponent,
+    BookmarksComponent,
+    AboutComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
+    BookmarkEditComponent,
+    BookmarkViewComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    routing
+  ],
+  providers: [BookmarkService,
+    UserService,
+    appRoutingProviders],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
