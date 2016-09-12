@@ -10,7 +10,7 @@ import { BookmarkEditParentComponent } from './bookmark-edit-parent.component';
  */
 @Component({
     selector: 'bm-edit',
-    templateUrl: 'app/bm-edit/bookmark-edit.component.html'
+    templateUrl: './bookmark-edit.component.html'
 })
 export class BookmarkEditComponent extends BookmarkEditParentComponent {
     /**

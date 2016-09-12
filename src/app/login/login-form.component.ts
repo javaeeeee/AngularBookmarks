@@ -10,7 +10,7 @@ import { UserService } from '../services/user-service';
  */
 @Component({
     selector: 'login-form',
-    templateUrl: 'app/login/login-form.component.html'
+    templateUrl: './login-form.component.html'
 })
 export class LoginFormComponent implements OnInit {
     submitted = false;
