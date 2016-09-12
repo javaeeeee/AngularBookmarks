@@ -71,6 +71,13 @@ export class BookmarkService {
         return this.addBookmark(bm);
     }
     /**
+     * A method to find a bookmark by id.
+     */
+    getBookmark(id: number): Promise<Bookmark> {
+        return this.getBookmarks()
+            .then(bookmarks => bookmarks.find(bookmark => bookmark.id === id));
+    }
+    /**
      * A method to append an id to the URL in order to access particular bookmarks.
      */
     private getUrlWithId(id: number): string {
@@ -82,12 +89,5 @@ export class BookmarkService {
     private handleError(error: any): Promise<any> {
         console.error('An error occured', error);
         return Promise.reject(error.message || error);
-    }
-    /**
-     * A method to find a bookmark by id.
-     */
-    getBookmark(id: number): Promise<Bookmark> {
-        return this.getBookmarks()
-            .then(bookmarks => bookmarks.find(bookmark => bookmark.id === id));
     }
 }
