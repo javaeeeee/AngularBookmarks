@@ -1,6 +1,6 @@
 {
   "name": "angularbookmarks",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -10,45 +10,25 @@
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
-  "description": "An app using Angular2 and TypeScript to manipulate bookmarks using REST API as a backend.",
-  "author": {
-    "name": "Dmitry Noranovich",
-    "email": "javaeeeee (at) gmail (dot) com",
-    "url": "javaeeeee.blogspot.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/javaeeeee/AngularBookmarks.git"
-  },
-  "keywords": [
-    "angular2",
-    "systemjs",
-    "typescript"
-  ],
   "private": true,
   "dependencies": {
-    "@angular/common": "~2.1.0",
-    "@angular/compiler": "~2.1.0",
-    "@angular/core": "~2.1.0",
-    "@angular/forms": "~2.1.0",
-    "@angular/http": "~2.1.0",
-    "@angular/platform-browser": "~2.1.0",
-    "@angular/platform-browser-dynamic": "~2.1.0",
-    "@angular/router": "~3.1.0",
-    "@angular/upgrade": "~2.1.0",
-    "angular-in-memory-web-api": "~0.1.5",
-    "bootstrap": "^3.3.7",
+    "@angular/common": "~2.0.0",
+    "@angular/compiler": "~2.0.0",
+    "@angular/core": "~2.0.0",
+    "@angular/forms": "~2.0.0",
+    "@angular/http": "~2.0.0",
+    "@angular/platform-browser": "~2.0.0",
+    "@angular/platform-browser-dynamic": "~2.0.0",
+    "@angular/router": "~3.0.0",
     "core-js": "^2.4.1",
-    "reflect-metadata": "^0.1.8",
-    "jquery": "^3.1.0",
-    "ng2-bootstrap": "^1.1.2",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.25"
+    "zone.js": "^0.6.23"
   },
   "devDependencies": {
     "@types/jasmine": "^2.2.30",
-    "angular-cli": "1.0.0-beta.11-webpack.8",
+    "@types/node": "^6.0.42",
+    "angular-cli": "1.0.0-beta.17",
     "codelyzer": "~0.0.26",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
@@ -57,7 +37,7 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
-    "protractor": "4.0.5",
+    "protractor": "4.0.9",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "2.0.2"

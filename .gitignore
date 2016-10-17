@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+/src/**/*.js*
 
 # dependencies
 /node_modules
@@ -10,6 +11,7 @@
 
 # IDEs and editors
 /.idea
+/.vscode
 .project
 .classpath
 *.launch
@@ -31,6 +33,3 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-
-# Compiled Files
-/src/**/*.js*
