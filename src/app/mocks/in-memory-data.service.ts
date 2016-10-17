@@ -1,4 +1,4 @@
-import { InMemoryDbService } from 'angular2-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 /**
  * A class used for mockin a backend.

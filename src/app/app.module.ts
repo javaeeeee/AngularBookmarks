@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // Imports for the fake backend.
-import {InMemoryWebApiModule} from 'angular2-in-memory-web-api';
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './mocks/in-memory-data.service';
 
 import {AppComponent} from './app.component';
